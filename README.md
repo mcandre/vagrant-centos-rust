@@ -2,12 +2,13 @@
 
 # VAGRANT CLOUD
 
-https://app.vagrantup.com/mcandre/boxes/vagrant-centos-rust
+https://app.vagrantup.com/mcandre/boxes/vagrant-centos-rust-amd64
+https://app.vagrantup.com/mcandre/boxes/vagrant-centos-rust-i386
 
 # EXAMPLE
 
 ```console
-$ cd test
+$ cd amd64/test
 $ vagrant up
 $ vagrant ssh -c "cd /vagrant && rustc -o hello hello.rs && ./hello"
 Hello World!
@@ -31,5 +32,6 @@ Hello World!
 # EXPORT
 
 ```console
-$ make vagrant-centos-rust.box
+$ sh -c "cd amd64 && make vagrant-centos-rust-amd64.box"
+$ sh -c "cd i386 && make vagrant-centos-rust-i386.box"
 ```
